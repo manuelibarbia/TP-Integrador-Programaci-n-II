@@ -38,7 +38,7 @@ class ProgramaPrincipal:
                 nuevo_alumno.cargar_alumno()
                 print("Alumno cargado exitosamente")
                 self.menu()
-                break
+            break
 
 class Alumno:
     def __init__(self, nombre_alumno, apellido_alumno, dni_alumno, direccion_alumno, telefono_alumno, mail_alumno, nacionalidad_alumnno, residencia_alumno, 
