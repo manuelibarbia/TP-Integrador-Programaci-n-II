@@ -1,7 +1,7 @@
 import sqlite3
 
 # PELIGRO!!! NO QUITAR COMENTARIO
-# miConexion = sqlite3.connect("Colegio Chester (alumnos)")
+# miConexion = sqlite3.connect("Colegio_Chester")
 # miCursor = miConexion.cursor()
 # miCursor.execute("CREATE TABLE ALUMNOS (NOMBRE VARCHAR(30), APELLIDO VARCHAR(30), DNI VARCHAR(10), DIRECCIÓN VARCHAR(50), TEL_ALUMNO VARCHAR(30), MAIL VARCHAR(30), NACIONALIDAD VARCHAR(20), RESIDENCIA VARCHAR(20), HERMANOS INTEGER, TEL_PADRE VARCHAR(30), TEL_MADRE VARCHAR(30), TEL_ADI VARCHAR(30))")
 # miConexion.commit()
@@ -67,7 +67,7 @@ class Alumno:
 class Conexiones:
     
     def abrirConexion(self):
-        self.miConexion = sqlite3.connect("Colegio Chester")
+        self.miConexion = sqlite3.connect("Colegio_Chester")
         self.miCursor = self.miConexion.cursor()
         
     def cerrarConexion(self):
