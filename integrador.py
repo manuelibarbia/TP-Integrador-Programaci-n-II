@@ -15,6 +15,12 @@ import sqlite3
 # miConexion.commit()
 # miConexion.close()
 
+# miConexion = sqlite3.connect("Colegio_Chester")
+# miCursor = miConexion.cursor()
+# miCursor.execute("DELETE FROM DOCENTES WHERE LEGAJO = 124")
+# miConexion.commit()
+# miConexion.close()
+
 class ProgramaPrincipal:
     
     def menu(self):
@@ -60,6 +66,10 @@ class ProgramaPrincipal:
                 nuevo_docente.cargar_docente()
                 print("Docente cargado exitosamente.")
                 self.menu()
+            elif nro == 3:
+                nombre_personal = input("Ingrese el nombre del personal: ")
+                apellido_personal = input("Ingrese el apellido del personal: ")
+                telefono_personal = input("Ingrese el teléfono del personal: ")
             break
 
 class Alumno:
@@ -101,7 +111,7 @@ class Docente:
     def cargar_docente(self):
         conexion = Conexiones()
         conexion.abrirConexion()
-        conexion.miCursor.execute("INSERT INTO DOCENTES VALUES('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}').".format(self.legajo_docente, self.nombre_docente, self.apellido_docente, self.domicilio_docente, self.dni_docente, self.telefono_docente, self.telefono_urgencia, self.titulo_docente, self.materia_docente))
+        conexion.miCursor.execute("INSERT INTO DOCENTES VALUES('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')".format(self.legajo_docente, self.nombre_docente, self.apellido_docente, self.domicilio_docente, self.dni_docente, self.telefono_docente, self.telefono_urgencia, self.titulo_docente, self.materia_docente))
         conexion.miConexion.commit()
         conexion.cerrarConexion()
 
